@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/vim-tlib"]
 	path = .vim/bundle/vim-tlib
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule ".vim/bundle/vim-multiple-cursors"]
+	path = .vim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
