@@ -88,3 +88,7 @@ noremap <silent><C-b> :FufBuffer<CR>
 " Close tree on open...
 let NERDTreeQuitOnOpen = 1
 let g:NERDTreeWinSize = 60
+
+" vim-latex settings
+let s:latexmk = "~/.vim/latexmk/latexmk.pl -pdf -pvc"
+map <C-c> :VimLatexCompileToggle<CR>
