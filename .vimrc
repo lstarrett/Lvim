@@ -47,13 +47,39 @@ hi PmenuSel cterm=NONE ctermfg=black ctermbg=yellow
 
 
 " NAVIGATION 
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
+map <C-l> :call MoveRight()<CR>
+map <C-h> :call MoveLeft()<CR>
 map <C-k> :tabnew<CR>
-map <C-j> :tabclose<CR>
+map <C-j> :call Close()<CR> 
+
+function! MoveLeft()
+if winnr() == 1
+tabp
+else
+wincmd h
+endif
+endfunction
+
+function! MoveRight()
+if winnr('$') == winnr()
+tabn
+else
+wincmd l
+endif
+endfunction
+
+function! Close()
+if winnr('$') == 1
+q
+else
+wincmd q
+endif
+endfunction
+
 map <C-i> :NERDTreeToggle<CR>
 map <C-n> :execute "tabmove" tabpagenr() - 2 <CR>
 map <C-m> :execute "tabmove" tabpagenr() <CR>
+map <C-g> :vsp<CR>
 
 "Enable and disable mouse use
 noremap <f1> :call ToggleMouse() <CR>
@@ -81,7 +107,7 @@ map <ScrollWheelDown> <C-E>
 
 " FUZZYFINDER stuff
 noremap <silent><C-f> :FufFile<CR>
-noremap <silent><C-g> :FufDir<CR>
+" noremap <silent><C-g> :FufDir<CR>
 noremap <silent><C-b> :FufBuffer<CR>
 
 " NERDTree stuff
