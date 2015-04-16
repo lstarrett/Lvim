@@ -1,4 +1,5 @@
 " VIM GENERAL CUSTOM COMMANDS --------------------
+let mapleader = ","
 
 " PATHOGEN load bundles
 execute pathogen#infect()
@@ -76,7 +77,6 @@ wincmd q
 endif
 endfunction
 
-map <C-i> :NERDTreeToggle<CR>
 map <C-n> :execute "tabmove" tabpagenr() - 2 <CR>
 map <C-m> :execute "tabmove" tabpagenr() <CR>
 map <C-g> :vsp<CR>
@@ -109,11 +109,6 @@ map <ScrollWheelDown> <C-E>
 noremap <silent><C-f> :FufFile<CR>
 " noremap <silent><C-g> :FufDir<CR>
 noremap <silent><C-b> :FufBuffer<CR>
-
-" NERDTree stuff
-" Close tree on open...
-let NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinSize = 60
 
 " vim-latex settings
 let s:latexmk = "~/.vim/latexmk/latexmk.pl -pdf -pvc"
