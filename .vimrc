@@ -32,12 +32,12 @@ colorscheme molokai
 syntax on
 
 " Powerline settings
-"let g:Powerline_symbols = 'fancy'
-"set guifont=Sauce+Code+Powerline+Regular
 set laststatus=2
 
 " Set tab and indent settings
-set tabstop=4
+" NOTE: vim-slueth plugin is in use to heuristically match
+" indentation settings of current file, so don't do too much
+" manually here.
 filetype plugin indent on
 
 " Show line number by default
