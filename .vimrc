@@ -8,24 +8,23 @@ execute pathogen#infect()
 command! Dw :%s/\s\+$//
 
 " Save/resotore vim session
-map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
-map <F3> :source ~/.vim_session <cr>     " And load session with F3
+map <F2> :mksession! ~/.vim_session <CR> " Quick write session with F2
+map <F3> :source ~/.vim_session <CR>     " And load session with F3
 
-" Search for selected text, forwards or backwards.
+" Search for highlighted text, or word under cursor
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
   \gvy/<C-R><C-R>=substitute(
   \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
 " ------------------------------------------------
 
 
 " VIM ENVIRONMENT --------------------------------
+
+
+" Indentation
+set tabstop=4 shiftwidth=4
 
 " Colors
 colorscheme molokai
@@ -40,6 +39,9 @@ set laststatus=2
 " manually here.
 filetype plugin indent on
 
+" Create a new line from normal mode
+noremap <Enter> o<ESC>
+
 " Show line number by default
 set number
 set hlsearch
@@ -52,6 +54,9 @@ map <C-l> :call MoveRight()<CR>
 map <C-h> :call MoveLeft()<CR>
 map <C-k> :tabnew<CR>
 map <C-j> :call Close()<CR> 
+map <C-i> :-tabmove <CR>
+map <C-o> :+tabmove <CR>
+map <C-g> :vsp<CR>
 
 function! MoveLeft()
 if winnr() == 1
@@ -76,10 +81,6 @@ else
 wincmd q
 endif
 endfunction
-
-map <C-n> :execute "tabmove" tabpagenr() - 2 <CR>
-map <C-m> :execute "tabmove" tabpagenr() <CR>
-map <C-g> :vsp<CR>
 
 "Enable and disable mouse use
 noremap <f1> :call ToggleMouse() <CR>
