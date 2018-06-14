@@ -44,10 +44,11 @@ noremap <Enter> o<ESC>
 
 " Show line number by default
 set number
+
+" Hilighting colors
 set hlsearch
 hi Search cterm=NONE ctermfg=black ctermbg=yellow
 hi PmenuSel cterm=NONE ctermfg=black ctermbg=yellow
-
 
 " NAVIGATION 
 map <C-l> :call MoveRight()<CR>
