@@ -33,6 +33,9 @@ syntax on
 " Powerline settings
 set laststatus=2
 
+" NerdCommenter settings
+let g:NERDSpaceDelims = 1
+
 " Set tab and indent settings
 " NOTE: vim-slueth plugin is in use to heuristically match
 " indentation settings of current file, so don't do too much

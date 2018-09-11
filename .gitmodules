@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = https://github.com/lervag/vim-latex
+[submodule ".vim/bundle/vim-nerdcommenter"]
+	path = .vim/bundle/vim-nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
