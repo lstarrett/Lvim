@@ -1,5 +1,5 @@
 " VIM GENERAL CUSTOM COMMANDS --------------------
-let mapleader = ","
+let mapleader = " "
 
 " PATHOGEN load bundles
 execute pathogen#infect()
