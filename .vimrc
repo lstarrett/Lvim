@@ -7,9 +7,14 @@ execute pathogen#infect()
 " Delete all trailing whitespace
 command! Dw :%s/\s\+$//
 
-" Save/resotore vim session
-map <F2> :mksession! ~/.vim_session <CR> " Quick write session with F2
-map <F3> :source ~/.vim_session <CR>     " And load session with F3
+" Session options
+set sessionoptions-=globals
+set sessionoptions-=localoptions
+set sessionoptions-=options
+
+" Save vim session
+command! Vims :mksession! vim_session " Quick write session
+cnoreabbrev vims Vims " vim_session file written to working dir
 
 " Search for highlighted text, or word under cursor
 vnoremap <silent> * :<C-U>
@@ -57,7 +62,7 @@ hi PmenuSel cterm=NONE ctermfg=black ctermbg=yellow
 map <C-l> :call MoveRight()<CR>
 map <C-h> :call MoveLeft()<CR>
 map <C-k> :tabnew<CR>
-map <C-j> :call Close()<CR> 
+map <C-j> :call CloseTab()<CR> 
 map <C-i> :-tabmove <CR>
 map <C-o> :+tabmove <CR>
 map <C-g> :vsp<CR>
@@ -78,7 +83,7 @@ wincmd l
 endif
 endfunction
 
-function! Close()
+function! CloseTab()
 if winnr('$') == 1
 q
 else
