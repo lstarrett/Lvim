@@ -28,12 +28,16 @@ vnoremap <silent> * :<C-U>
 " VIM ENVIRONMENT --------------------------------
 
 
-" Indentation
-set tabstop=4 shiftwidth=4
+" Indentation and line width
+set tabstop=2 shiftwidth=2 tw=100
+
+" Fix indentation of just-pasted text
+nnoremap gi `[v`]=
 
 " Colors
 colorscheme molokai
 syntax on
+syn match Todo "\DEBUG\>"
 
 " Powerline settings
 set laststatus=2
