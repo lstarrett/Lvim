@@ -121,8 +121,10 @@ map <ScrollWheelDown> <C-E>
 
 " FUZZYFINDER stuff
 noremap <silent><C-f> :FufFile<CR>
-" noremap <silent><C-g> :FufDir<CR>
 noremap <silent><C-b> :FufBuffer<CR>
+
+" SnipMate update default parser (avoid 'deprecated SnipMate parser' startup message)
+let g:snipMate = { 'snippet_version' : 1 }
 
 " vim-latex settings
 let s:latexmk = "~/.vim/latexmk/latexmk.pl -pdf -pvc"
