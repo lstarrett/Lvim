@@ -144,6 +144,9 @@ map <ScrollWheelDown> <C-E>
 "nnoremap <silent><C-[> :let line = line('.')<CR>:cn<CR>:exec ':' . line<CR>
 "nnoremap <silent><C-]> :let line = line('.')<CR>:cp<CR>:exec ':' . line<CR>
 
+" vim-editorconfig stuff
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " vim-fuzzyfinder stuff
 noremap <silent><C-f> :FufFile<CR>
 noremap <silent><C-b> :FufBuffer<CR>
