@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/vim-lsp-settings"]
 	path = .vim/bundle/vim-lsp-settings
 	url = https://github.com/mattn/vim-lsp-settings.git
+[submodule ".vim/bundle/editorconfig-vim"]
+	path = .vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

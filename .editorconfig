@@ -1,0 +1,14 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# This is the top-most EditorConfig file
+root = true
+
+# Unix-style newlines for all files
+[*]
+end_of_line = lf
+
+# style rules for .vimrc and any scripts which may get added
+[*.{vimrc,py,pl,js}]
+charset = utf-8
+indent_style = space
+indent_size = 2
