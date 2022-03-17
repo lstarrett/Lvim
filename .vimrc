@@ -121,19 +121,19 @@ function! CloseTab()
 endfunction
 
 "Enable and disable mouse use
-noremap <f1> :call ToggleMouse() <CR>
-function! ToggleMouse()
-  if &mouse == 'a'
-    set mouse=
-    echo "Mouse usage disabled"
-  else
-    set mouse=a
-    echo "Mouse usage enabled"
-  endif
-endfunction
+" noremap <f1> :call ToggleMouse() <CR>
+" function! ToggleMouse()
+  " if &mouse == 'a'
+    " set mouse=
+    " echo "Mouse usage disabled"
+  " else
+    " set mouse=a
+    " echo "Mouse usage enabled"
+  " endif
+" endfunction
 
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+" map <ScrollWheelUp> <C-Y>
+" map <ScrollWheelDown> <C-E>
 " ------------------------------------------------
 
 
@@ -163,9 +163,9 @@ let g:lsp_diagnostics_enabled = 0  " disable diagnostics support
 let g:lsp_document_code_action_signs_enabled = 0  " disable code action markers
 let g:lsp_settings_filetype_javascript = ['typescript-language-server']
 
-noremap <leader>def<Space> :rightbelow vertical LspDefinition<CR>
-noremap <leader>dec<Space> :rightbelow vertical LspDeclaration<CR>
-noremap <leader>ref<Space> :LspReferences<CR>
-noremap <leader>hov<Space> :LspHover<CR>
-noremap <leader>pre<Space> :LspPeekDefinition<CR>
-noremap <leader>ren<Space> :LspRename<CR>
+noremap <leader>def :rightbelow vertical LspDefinition<CR>
+noremap <leader>dec :rightbelow vertical LspDeclaration<CR>
+noremap <leader>refs :LspReferences<CR>
+noremap <leader>hov :LspHover<CR>
+noremap <leader>peek :LspPeekDefinition<CR>
+noremap <leader>ren :LspRename<CR>
