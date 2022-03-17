@@ -159,7 +159,7 @@ let s:latexmk = "~/.vim/latexmk/latexmk.pl -pdf -pvc"
 map <C-c> :VimLatexCompileToggle<CR>
 
 " vim-markdown-preview settings
-let vim_markdown_preview_github=1
+let vim_markdown_preview_github=1  " requires https://github.com/joeyespo/grip
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_hotkey='<C-p>'
 
