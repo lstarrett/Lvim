@@ -158,6 +158,11 @@ let g:snipMate = { 'snippet_version' : 1 }
 let s:latexmk = "~/.vim/latexmk/latexmk.pl -pdf -pvc"
 map <C-c> :VimLatexCompileToggle<CR>
 
+" vim-markdown-preview settings
+let vim_markdown_preview_github=1  " requires https://github.com/joeyespo/grip
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_hotkey='<C-p>'
+
 " vim-lsp and vim-lsp-settings stuff
 let g:lsp_diagnostics_enabled = 0  " disable diagnostics support
 let g:lsp_document_code_action_signs_enabled = 0  " disable code action markers
