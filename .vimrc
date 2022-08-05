@@ -12,6 +12,12 @@ set sessionoptions-=globals
 set sessionoptions-=localoptions
 set sessionoptions-=options
 
+" Edit .vimrc
+command! Vimrc :e ~/.vimrc
+cnoreabbrev vimrc Vimrc
+command! Sp :source ~/.vimrc
+cnoreabbrev sp Sp " .vimrc sourced!
+
 " Save vim session
 command! Vims :mksession! vim_session " Quick write session
 cnoreabbrev vims Vims " vim_session file written to working dir
@@ -92,13 +98,8 @@ function! MoveRight()
     " current window is only, or rightmost in vertical split
     tabn
   else
-    if winheight(0) + &cmdheight + 1 != &lines
-      " current window is one in horizantal split
-      tabn
-    else
-      " current window is leftmost in vertical split
-      wincmd l
-    endif
+    " current window is leftmost in vertical split
+    wincmd l
   endif
 endfunction
 
@@ -135,6 +136,8 @@ endfunction
 " map <ScrollWheelUp> <C-Y>
 " map <ScrollWheelDown> <C-E>
 " ------------------------------------------------
+
+noremap <leader>2p :vsp<bar>wincmd l<bar>exe "norm! Ljz<c-v><cr>"<cr>:set scb<cr>:wincmd h<cr> :set scb<cr>
 
 
 " PLUGIN MODS ------------------------------------
