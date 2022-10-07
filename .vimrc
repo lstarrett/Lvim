@@ -35,7 +35,7 @@ vnoremap <silent> * :<C-U>
 
 
 " Indentation and line width
-set tabstop=2 shiftwidth=2 tw=100
+set expandtab tabstop=2 shiftwidth=2 tw=100 fo-=t
 
 " Fix indentation of just-pasted text
 nnoremap gi `[v`]=
@@ -44,6 +44,12 @@ nnoremap gi `[v`]=
 colorscheme molokai
 syntax on
 syn match Todo "\DEBUG\>"
+
+" Custom filetype syntax categories, for syntax highlighting
+augroup custom_filetypes
+  au!
+  autocmd BufNewFile,BufRead .envrc set syntax=sh
+augroup END
 
 " Powerline settings
 set laststatus=2
